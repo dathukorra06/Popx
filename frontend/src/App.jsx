@@ -10,7 +10,8 @@ const DEFAULT_USER = {
   email: 'Marry@Gmail.Com',
   phone: '+1 (555) 019-2834',
   company: 'PopX Agency',
-  isAgency: 'Yes'
+  isAgency: 'Yes',
+  profilePic: null
 };
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
       case 'signup':
         return <Signup setScreen={setScreen} userData={userData} setUserData={setUserData} />;
       case 'profile':
-        return <Profile setScreen={setScreen} userData={userData} resetUserData={resetUserData} />;
+        return <Profile setScreen={setScreen} userData={userData} setUserData={setUserData} resetUserData={resetUserData} />;
       default:
         return <Welcome setScreen={setScreen} />;
     }
@@ -46,34 +47,7 @@ function App() {
         </div>
       </div>
 
-      {/* Preview Navigation Helper (Ideal for grading & testing page designs) */}
-      <div className="preview-selector">
-        <span className="preview-selector-title">Design Preview:</span>
-        <button 
-          className={`preview-btn ${screen === 'welcome' ? 'active' : ''}`}
-          onClick={() => setScreen('welcome')}
-        >
-          Welcome
-        </button>
-        <button 
-          className={`preview-btn ${screen === 'signin' ? 'active' : ''}`}
-          onClick={() => setScreen('signin')}
-        >
-          Signin
-        </button>
-        <button 
-          className={`preview-btn ${screen === 'signup' ? 'active' : ''}`}
-          onClick={() => setScreen('signup')}
-        >
-          Signup
-        </button>
-        <button 
-          className={`preview-btn ${screen === 'profile' ? 'active' : ''}`}
-          onClick={() => setScreen('profile')}
-        >
-          Profile Settings
-        </button>
-      </div>
+
     </>
   );
 }

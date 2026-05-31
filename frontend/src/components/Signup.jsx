@@ -48,11 +48,15 @@ export default function Signup({ setScreen, userData, setUserData }) {
     <div className="screen-wrapper form-screen" style={{ justifyContent: 'space-between', minHeight: '100%' }}>
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', flex: 1 }}>
         <div>
-          <div className="form-header" style={{ marginBottom: '24px' }}>
+          <button className="back-btn" onClick={() => setScreen('welcome')}>
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            Back
+          </button>
+          <div className="form-header animate-delay-1" style={{ marginBottom: '24px' }}>
             <h2 className="form-title">Create your<br />PopX account</h2>
           </div>
 
-          <form onSubmit={handleSubmit} id="signup-form" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <form onSubmit={handleSubmit} id="signup-form" className="animate-delay-2" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div className="input-group">
               <span className="input-label">Full Name<span className="required-star">*</span></span>
               <input

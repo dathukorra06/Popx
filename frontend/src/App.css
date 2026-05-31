@@ -1,3 +1,29 @@
+/* Back Button */
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-gray);
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: var(--text-dark);
+}
+
+.back-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 /* Welcome Screen Styles */
 .welcome-screen {
   padding: 40px 20px;

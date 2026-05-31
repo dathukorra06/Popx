@@ -23,7 +23,11 @@ export default function Signin({ setScreen, userData, setUserData }) {
   return (
     <div className="screen-wrapper form-screen">
       <div>
-        <div className="form-header">
+        <button className="back-btn" onClick={() => setScreen('welcome')}>
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          Back
+        </button>
+        <div className="form-header animate-delay-1">
           <h2 className="form-title">Signin to your<br />PopX account</h2>
           <p className="form-desc">
             Lorem ipsum dolor sit amet,<br />
@@ -31,7 +35,7 @@ export default function Signin({ setScreen, userData, setUserData }) {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="form-fields">
+        <form onSubmit={handleSubmit} className="form-fields animate-delay-2">
           <div className="input-group">
             <span className="input-label">Email Address</span>
             <input

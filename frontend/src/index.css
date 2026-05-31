@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --primary-purple: #6C25FF;
@@ -10,7 +10,7 @@
   --error-color: #E53935;
   --white: #FFFFFF;
 
-  --sans-font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --sans-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   font-family: var(--sans-font);
   color-scheme: light;
@@ -48,8 +48,8 @@ body {
 /* Device Wrapper styling to center the mobile interface */
 .device-container {
   position: relative;
-  width: 375px;
-  height: 812px;
+  width: 320px;
+  height: 640px;
   background-color: var(--white);
   border-radius: 40px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -139,7 +139,7 @@ body {
 
 /* Screen transition effect */
 .screen-wrapper {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -147,13 +147,24 @@ body {
   position: relative;
 }
 
-@keyframes fadeIn {
+@keyframes slideUpFade {
   from {
     opacity: 0;
-    transform: scale(0.98) translateY(5px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
+}
+
+/* Staggered animation utility classes */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+
+/* Apply slideUpFade to children for staggered effect */
+.screen-wrapper > * {
+  animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
